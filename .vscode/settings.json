@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": false,
+    "[sql]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": null
+    },
+    "sql.format.enable": false
+}
