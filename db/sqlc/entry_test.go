@@ -2,6 +2,7 @@ package db
 
 import (
 	"context"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -20,7 +21,7 @@ func createRandomEntry(t *testing.T, account Account) Entry {
 	require.Equal(t, arg.Amount, entry.Amount)
 	require.NotZero(t, entry.ID)
 	require.NotZero(t, entry.CreatedAt)
-
+	fmt.Printf("%+v\n", arg)
 	return entry
 }
 
@@ -34,6 +35,8 @@ func TestGetEntry(t *testing.T) {
 	entry1 := createRandomEntry(t, account)
 
 	entry2, err := testQueries.GetEntry(context.Background(), entry1.ID)
+	fmt.Printf("%+v\n", account)
+
 	require.NoError(t, err)
 	require.NotEmpty(t, entry2)
 
